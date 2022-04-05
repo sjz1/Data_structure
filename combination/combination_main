@@ -1,0 +1,27 @@
+#include <iostream>
+using namespace std;
+int my_com(int number, int range);
+
+int main()
+{
+	int ans, n, r;
+	cout << "n을 입력하세요" << endl;
+	cin >> n;
+	cout << "r을 입력하세요" << endl;
+	cin >> r;
+
+	cout << "결과값" <<(ans = my_com(n, r));
+	return 0;
+}
+
+
+int my_com(int number, int range)
+{
+	//예외처리
+	if ((number == range) || (range == 0))
+	{
+		return 1;
+	}
+
+	return my_com(number - 1, range - 1) + my_com(number - 1, range);
+}
